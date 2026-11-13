@@ -11,7 +11,7 @@ giấy phép CC BY-NC-SA 3.0.
 - Email: 26ai.tinhlvt@vinuni.edu.vn
 - Link repository: https://github.com/tinhne/K5_L2-DAY5-LeVanTrungTinh-2A202603145-MOTTracking
 - Giờ bắt đầu: 16h00
-- Giờ kết thúc: 13/11/2026 — 19h00
+- Giờ kết thúc: 13/11/2026 — 18h30
 
 Đề B gồm các đối tượng P1, P19, P20, P21 và P22 theo bảng nhận diện. Trong
 báo cáo này, năm track trong file xuất được đối chiếu theo thứ tự P1–P5 của
@@ -31,12 +31,12 @@ bảng nhận diện.
 
 | Mã       | Số keyframe | Keyframe ở frame                                                                        | Số frame có mặt | Keyframe / 100 frame | Thời gian (phút) | Chỗ khó                        |
 | -------- | ----------: | --------------------------------------------------------------------------------------- | --------------: | -------------------: | ---------------- | ------------------------------ |
-| P1       |          21 | 0, 1, 10, 20, 29, 30, 49, 50, 55, 59, 60, 70, 80, 90, 100, 110, 120, 130, 139, 140, 149 |             140 |                 15.0 | Chưa ghi nhận    | Đoạn bị che và bật/tắt outside |
-| P2       |          18 | 0, 10, 20, 30, 40, 49, 50, 59, 60, 70, 80, 90, 100, 110, 120, 130, 140, 149             |             150 |                 12.0 | Chưa ghi nhận    | Theo dõi đủ đoạn 0–149         |
-| P3       |          12 | 0, 10, 20, 30, 40, 140, 149                                                             |             119 |                  5.0 | Chưa ghi nhận    | Đoạn outside 110–139           |
-| P4       |           8 | 0, 10, 20, 30, 40, 50, 95, 100                                                          |             105 |                  7.6 | Chưa ghi nhận    | Kết thúc thấy được ở frame 104 |
-| P5       |          12 | 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 149                                    |             110 |                 10.9 | Chưa ghi nhận    | Bắt đầu từ frame 40            |
-| **Tổng** |      **65** | —                                                                                       |         **624** |             **10.4** | —                | —                              |
+| P1       |          21 | 0, 1, 10, 20, 29, 30, 49, 50, 55, 59, 60, 70, 80, 90, 100, 110, 120, 130, 139, 140, 149 |             140 |                 15.0 | Không ghi riêng | Đoạn bị che và bật/tắt outside |
+| P2       |          18 | 0, 10, 20, 30, 40, 49, 50, 59, 60, 70, 80, 90, 100, 110, 120, 130, 140, 149             |             150 |                 12.0 | Không ghi riêng | Theo dõi đủ đoạn 0–149         |
+| P3       |          12 | 0, 10, 20, 30, 40, 140, 149                                                             |             119 |                  5.0 | Không ghi riêng | Đoạn outside 110–139           |
+| P4       |           8 | 0, 10, 20, 30, 40, 50, 95, 100                                                          |             105 |                  7.6 | Không ghi riêng | Kết thúc thấy được ở frame 104 |
+| P5       |          12 | 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 149                                    |             110 |                 10.9 | Không ghi riêng | Bắt đầu từ frame 40            |
+| **Tổng** |      **65** | —                                                                                       |         **624** |             **10.4** | **150 phút tổng** | —                            |
 
 Keyframe / 100 frame của cả bài = 65 ÷ 624 × 100 = **10.4**.
 
