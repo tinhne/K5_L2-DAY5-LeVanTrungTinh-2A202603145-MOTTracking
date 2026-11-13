@@ -8,10 +8,10 @@ giấy phép CC BY-NC-SA 3.0.
 - Họ tên: Lê Văn Trung Tính
 - MSSV: 2A202603145
 - Mã đề: B
-- Email: Chưa cung cấp
-- Link repository: Chưa cung cấp
-- Giờ bắt đầu: Chưa ghi nhận
-- Giờ kết thúc: 13/11/2026 — chưa ghi nhận giờ cụ thể
+- Email: 26ai.tinhlvt@vinuni.edu.vn
+- Link repository: https://github.com/tinhne/K5_L2-DAY5-LeVanTrungTinh-2A202603145-MOTTracking
+- Giờ bắt đầu: 16h00
+- Giờ kết thúc: 13/11/2026 — 19h00
 
 Đề B gồm các đối tượng P1, P19, P20, P21 và P22 theo bảng nhận diện. Trong
 báo cáo này, năm track trong file xuất được đối chiếu theo thứ tự P1–P5 của
@@ -19,24 +19,24 @@ bảng nhận diện.
 
 ## 1. Xem trước đoạn video (CP0)
 
-| Mã | Frame xuất hiện | Frame cuối thấy được | Rẽ / dừng / đổi tốc độ ở frame | Bị che ở frame | Ghi chú |
-|---|---:|---:|---|---|---|
-| P1 | 0 | 149 | Xem lại quanh 29–55 | 29–54; ngoài 39–48 | Track 1, có đoạn khuất và hiện lại |
-| P2 | 0 | 149 | Không ghi nhận riêng | Không ghi nhận | Track 2, có mặt đủ 150 frame |
-| P3 | 0 | 148 | Không ghi nhận riêng | Ngoài 110–139 | Track 3, hiện lại từ frame 140 |
-| P4 | 0 | 104 | Không ghi nhận riêng | Không ghi nhận | Track 4, kết thúc ở frame 104 |
-| P5 | 40 | 149 | Không ghi nhận riêng | Không ghi nhận | Track 5, xuất hiện từ frame 40 |
+| Mã  | Frame xuất hiện | Frame cuối thấy được | Rẽ / dừng / đổi tốc độ ở frame | Bị che ở frame     | Ghi chú                            |
+| --- | --------------: | -------------------: | ------------------------------ | ------------------ | ---------------------------------- |
+| P1  |               0 |                  149 | Xem lại quanh 29–55            | 29–54; ngoài 39–48 | Track 1, có đoạn khuất và hiện lại |
+| P2  |               0 |                  149 | Không ghi nhận riêng           | Không ghi nhận     | Track 2, có mặt đủ 150 frame       |
+| P3  |               0 |                  148 | Không ghi nhận riêng           | Ngoài 110–139      | Track 3, hiện lại từ frame 140     |
+| P4  |               0 |                  104 | Không ghi nhận riêng           | Không ghi nhận     | Track 4, kết thúc ở frame 104      |
+| P5  |              40 |                  149 | Không ghi nhận riêng           | Không ghi nhận     | Track 5, xuất hiện từ frame 40     |
 
 ## 2. Keyframe và thời gian (CP1, CP4)
 
-| Mã | Số keyframe | Keyframe ở frame | Số frame có mặt | Keyframe / 100 frame | Thời gian (phút) | Chỗ khó |
-|---|---:|---|---:|---:|---|---|
-| P1 | 21 | 0, 1, 10, 20, 29, 30, 49, 50, 55, 59, 60, 70, 80, 90, 100, 110, 120, 130, 139, 140, 149 | 140 | 15.0 | Chưa ghi nhận | Đoạn bị che và bật/tắt outside |
-| P2 | 18 | 0, 10, 20, 30, 40, 49, 50, 59, 60, 70, 80, 90, 100, 110, 120, 130, 140, 149 | 150 | 12.0 | Chưa ghi nhận | Theo dõi đủ đoạn 0–149 |
-| P3 | 12 | 0, 10, 20, 30, 40, 140, 149 | 119 | 5.0 | Chưa ghi nhận | Đoạn outside 110–139 |
-| P4 | 8 | 0, 10, 20, 30, 40, 50, 95, 100 | 105 | 7.6 | Chưa ghi nhận | Kết thúc thấy được ở frame 104 |
-| P5 | 12 | 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 149 | 110 | 10.9 | Chưa ghi nhận | Bắt đầu từ frame 40 |
-| **Tổng** | **65** | — | **624** | **10.4** | — | — |
+| Mã       | Số keyframe | Keyframe ở frame                                                                        | Số frame có mặt | Keyframe / 100 frame | Thời gian (phút) | Chỗ khó                        |
+| -------- | ----------: | --------------------------------------------------------------------------------------- | --------------: | -------------------: | ---------------- | ------------------------------ |
+| P1       |          21 | 0, 1, 10, 20, 29, 30, 49, 50, 55, 59, 60, 70, 80, 90, 100, 110, 120, 130, 139, 140, 149 |             140 |                 15.0 | Chưa ghi nhận    | Đoạn bị che và bật/tắt outside |
+| P2       |          18 | 0, 10, 20, 30, 40, 49, 50, 59, 60, 70, 80, 90, 100, 110, 120, 130, 140, 149             |             150 |                 12.0 | Chưa ghi nhận    | Theo dõi đủ đoạn 0–149         |
+| P3       |          12 | 0, 10, 20, 30, 40, 140, 149                                                             |             119 |                  5.0 | Chưa ghi nhận    | Đoạn outside 110–139           |
+| P4       |           8 | 0, 10, 20, 30, 40, 50, 95, 100                                                          |             105 |                  7.6 | Chưa ghi nhận    | Kết thúc thấy được ở frame 104 |
+| P5       |          12 | 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 149                                    |             110 |                 10.9 | Chưa ghi nhận    | Bắt đầu từ frame 40            |
+| **Tổng** |      **65** | —                                                                                       |         **624** |             **10.4** | —                | —                              |
 
 Keyframe / 100 frame của cả bài = 65 ÷ 624 × 100 = **10.4**.
 
@@ -47,12 +47,12 @@ khi bị che, khi bật outside, khi hiện lại và khi thấy rõ trở lại
 
 Người bị che: **P1**
 
-| Mốc | Frame |
-|---|---:|
-| Bắt đầu bị che một phần (bật `occluded`) | 29 |
-| Mất hẳn (bật `outside`) | 39 |
-| Hiện lại (tắt `outside`) | 49 |
-| Thấy rõ trở lại (tắt `occluded`) | 55 |
+| Mốc                                      | Frame |
+| ---------------------------------------- | ----: |
+| Bắt đầu bị che một phần (bật `occluded`) |    29 |
+| Mất hẳn (bật `outside`)                  |    39 |
+| Hiện lại (tắt `outside`)                 |    49 |
+| Thấy rõ trở lại (tắt `occluded`)         |    55 |
 
 - Thời gian khuất hẳn: **10 frame (39–48) = 0,33 giây** ở 30 fps.
 - Quyết định: **giữ cùng ID**.
@@ -70,25 +70,25 @@ Người bị che: **P1**
 Đã kiểm tra hai lượt: lượt 1 theo từng người từ frame 149 về 0 và lượt 2
 theo cảnh với bước nhảy 10 frame. Kết quả tự kiểm không phát hiện lỗi.
 
-| Frame | Mã người | Loại lỗi | Mô tả một câu | Phát hiện ở lượt | Đã sửa? |
-|---:|---|---|---|---|---|
-| — | P1–P5 | — | Đã kiểm hai lượt, không phát hiện lỗi ID hoặc box thừa. | Lượt 1 và 2 | Không cần sửa |
+| Frame | Mã người | Loại lỗi | Mô tả một câu                                           | Phát hiện ở lượt | Đã sửa?       |
+| ----: | -------- | -------- | ------------------------------------------------------- | ---------------- | ------------- |
+|     — | P1–P5    | —        | Đã kiểm hai lượt, không phát hiện lỗi ID hoặc box thừa. | Lượt 1 và 2      | Không cần sửa |
 
 | `id_switch` | `fragmentation` | `lost` | `merge` | `false_track` | `drift` | `flag` |
-|---:|---:|---:|---:|---:|---:|---:|
-| 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| ----------: | --------------: | -----: | ------: | ------------: | ------: | -----: |
+|           0 |               0 |      0 |       0 |             0 |       0 |      0 |
 
 Không có lỗi chỉ lượt 2 phát hiện; cả hai lượt đều không phát hiện lỗi.
 
 ## 5. File xuất và kết quả tự kiểm (CP4)
 
-| Kiểm tra | Kết quả |
-|---|---|
-| Tên file MOT 1.1 | `src/exports/LeVanTrungTinh_mot.zip` |
-| Tên file CVAT for video 1.1 | `src/exports/LeVanTrungTinh_cvat_video.zip` |
-| Số track ID khác nhau trong `gt/gt.txt` (phải là 5) | 5 — đạt |
-| Frame `outside` không có dòng trong `gt/gt.txt` (đúng / sai) | Đúng |
-| Job đã completed trên CVAT máy cá nhân | Chưa xác nhận |
+| Kiểm tra                                                     | Kết quả                                     |
+| ------------------------------------------------------------ | ------------------------------------------- |
+| Tên file MOT 1.1                                             | `src/exports/LeVanTrungTinh_mot.zip`        |
+| Tên file CVAT for video 1.1                                  | `src/exports/LeVanTrungTinh_cvat_video.zip` |
+| Số track ID khác nhau trong `gt/gt.txt` (phải là 5)          | 5 — đạt                                     |
+| Frame `outside` không có dòng trong `gt/gt.txt` (đúng / sai) | Đúng                                        |
+| Job đã completed trên CVAT máy cá nhân                       | Đã completed                                |
 
 Kết quả `src/check_submission.py`:
 
