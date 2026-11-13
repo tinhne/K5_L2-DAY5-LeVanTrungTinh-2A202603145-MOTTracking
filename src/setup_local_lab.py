@@ -48,7 +48,7 @@ def local_server(value):
         or url.query
         or url.fragment
     ):
-        raise argparse.ArgumentTypeError("Dùng địa chỉ CVAT local, ví dụ http://localhost:8080.")
+        raise argparse.ArgumentTypeError("Dùng địa chỉ CVAT local, ví dụ http://localhost:8081.")
     return value.rstrip("/")
 
 
@@ -125,16 +125,37 @@ def make_reference(variant, config, frames):
     return path
 
 
+def allow_new_server_nulls():
+    """Cho cvat-sdk 2.50 (Python 3.9) đọc được phản hồi của CVAT server mới hơn.
+
+    Server mới trả về "data": null cho task chưa có ảnh, còn SDK 2.50 bắt buộc trường này là số.
+    """
+    from cvat_sdk.api_client import models
+    from cvat_sdk.api_client.model_utils import none_type
+
+    types = models.TaskRead.openapi_types
+    if none_type not in types["data"]:
+        types["data"] = (*types["data"], none_type)
+
+
 def open_or_create_job(client, task_name, frames):
     from cvat_sdk.api_client import models
+    from cvat_sdk.core.helpers import get_paginated_collection
 
-    matches = [task for task in client.tasks.list(search=task_name) if task.name == task_name]
+    # cvat-sdk 2.50 (Python 3.9) không có tasks.list(search=...): lọc theo tên qua API cấp thấp.
+    found = get_paginated_collection(client.api_client.tasks_api.list_endpoint, name=task_name)
+    matches = [client.tasks.retrieve(task.id) for task in found if task.name == task_name]
     if len(matches) > 1:
         raise ValueError(f"Có nhiều task tên {task_name}. Đổi tên task trùng trong CVAT rồi chạy lại.")
 
     if matches:
         task = matches[0]
-        print(f"Tìm thấy task #{task.id}, đang kiểm tra dữ liệu đã có…", flush=True)
+        if task.data is None:
+            # Lần chạy trước đã tạo task nhưng dừng trước khi tải ảnh: tải tiếp vào chính task này.
+            print(f"Task #{task.id} chưa có ảnh, đang tải ảnh vào CVAT local…", flush=True)
+            task.upload_data(resources=frames, params={"sorting_method": "lexicographical"})
+        else:
+            print(f"Tìm thấy task #{task.id}, đang kiểm tra dữ liệu đã có…", flush=True)
     else:
         print("Đang tạo task và tải ảnh vào CVAT local…", flush=True)
         task = client.tasks.create_from_data(
@@ -168,7 +189,7 @@ def open_or_create_job(client, task_name, frames):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--mssv", type=student_id, help="MSSV. Bỏ qua để nhập khi chạy.")
-    parser.add_argument("--server", default="http://localhost:8080", type=local_server)
+    parser.add_argument("--server", default="http://localhost:8081", type=local_server)
     parser.add_argument("--frames-dir", type=Path, help="Thư mục có 150 ảnh MOT17-09 đã tải.")
     modes = parser.add_mutually_exclusive_group()
     modes.add_argument("--assignment-only", action="store_true", help="Chỉ xem mã đề.")
@@ -196,6 +217,7 @@ def main():
         from cvat_sdk.core.exceptions import CvatSdkException
         from urllib3.exceptions import HTTPError
 
+        allow_new_server_nulls()
         username = input("Tên đăng nhập CVAT local: ").strip()
         password = getpass("Mật khẩu CVAT local: ")
         try:
@@ -203,8 +225,9 @@ def main():
                 task_id, job_id = open_or_create_job(client, task_name, frames)
         except ApiException as error:
             if error.status in (400, 401, 403):
+                detail = str(error.body).strip() if error.body else str(error.reason).strip()
                 raise ValueError(
-                    f"CVAT trả về HTTP {error.status}. Kiểm tra đăng nhập và quyền tạo task."
+                    f"CVAT trả về HTTP {error.status}: {detail or 'không có chi tiết'}"
                 ) from error
             raise ValueError(f"CVAT trả về HTTP {error.status}. Mở CVAT và kiểm tra mục Requests.") from error
         except (CvatSdkException, HTTPError) as error:

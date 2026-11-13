@@ -25,7 +25,7 @@ py -3 -m venv .venv
 **macOS hoặc Linux**
 
 ```bash
-python3 -m venv .venv
+python3.11 -m venv .venv
 .venv/bin/python -m pip install -r src/requirements-local.txt
 .venv/bin/python src/setup_local_lab.py
 ```
